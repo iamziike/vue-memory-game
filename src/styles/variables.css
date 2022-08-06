@@ -1,0 +1,26 @@
+@font-face {
+  font-family: SyneMono;
+  src: url('../assets/fonts/Syne_Mono/SyneMono-Regular.ttf');
+}
+
+:root {
+  --black: #333;
+  --white: #fff;
+  --green: #008000;
+  --grey: hsl(0, 0%, 80%);
+
+  /* spacing */
+  --xsm: 10px;
+  --sm: 20px;
+  --df: 30px;
+  --md: 40px;
+  --lg: 50px;
+  --xlg: 60px;
+
+  /* font */
+  --ff: SyneMono;
+
+  /* cursor */
+  --cursor-default: url('../assets/images/pokemon-vaporeon-cursor.png');
+  --cursor-pointer: url('../assets/images/pokemon-vaporeon-pointer.png');
+}

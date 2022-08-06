@@ -1,0 +1,3 @@
+export const IS_FIRST_TIME_DB_KEY = 'IS_FIRST_TIME';
+export const DIFFICULTY_DB_KEY = 'DIFFICULTY';
+export const CONTENTS_DB_KEY = 'CONTENTS';

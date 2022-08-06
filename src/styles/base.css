@@ -1,0 +1,5 @@
+body {
+  font-family: var(--ff);
+  cursor: var(--cursor-default), default;
+  overflow: hidden;
+}
