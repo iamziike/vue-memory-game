@@ -17,7 +17,7 @@
       <Modal
         :exitHandler="handleMenuVisibility"
         title="Menu"
-        :items="{ ...menuItems, handler: handleMenuActions }"
+        :items="menuItems"
         itemsType="singleHandler"
       />
     </template>
@@ -39,9 +39,6 @@ export default defineComponent({
   data() {
     return {
       isMenuVisible: false,
-      menuItems: {
-        text: ['Restart', 'Reveal'],
-      },
     };
   },
   methods: {
@@ -85,6 +82,12 @@ export default defineComponent({
     ...mapState(['playerLives', 'contents']),
     difficulties() {
       return ['Easy', 'Medium', 'Hard'];
+    },
+    menuItems() {
+      return {
+        text: ['Restart', 'Reveal'],
+        handler: (value: 'Restart' | 'Reveal') => this.handleMenuActions(value),
+      };
     },
   },
 });

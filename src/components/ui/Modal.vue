@@ -10,12 +10,7 @@
         type="exit"
       />
     </div>
-    <ul v-if="itemsType === 'multiHandler'" class="modal-content">
-      <li v-for="item in items" :key="item.text" @click="item.handler">
-        {{ item.text }}
-      </li>
-    </ul>
-    <ul v-if="itemsType === 'singleHandler'" class="modal-content">
+    <ul class="modal-content">
       <li v-for="text in items.text" :key="text" @click="items.handler(text)">
         {{ text }}
       </li>
@@ -32,23 +27,14 @@ import type { VoidFunction, VoidFunctionWithParams } from '@/types';
 
 export default defineComponent({
   name: 'Modal',
+  inheritAttrs: false,
   props: {
-    itemsType: String as PropType<'multiHandler' | 'singleHandler'>,
-    title: {
-      type: String,
-    },
-    items: {
-      type: Object as PropType<
-        | { text: string; handler: VoidFunction }
-        | {
-            text: string[];
-            handler: VoidFunctionWithParams<string> | VoidFunction;
-          }
-      >,
-    },
-    exitHandler: {
-      required: false,
-    },
+    title: String,
+    items: Object as PropType<{
+      text: string[];
+      handler: VoidFunction | VoidFunctionWithParams<string>;
+    }>,
+    exitHandler: Function as PropType<VoidFunction>,
   },
   components: { Icon },
 });
